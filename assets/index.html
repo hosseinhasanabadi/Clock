@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+    <div id="MyClock" class="custom"></div>
+        
+   
+<script>
+    function clockRuner(){
+        var d = new Date();
+        var hour = d.getHours();
+        var min = d.getMinutes();
+        var sec =d.getSeconds();
+        var p="AM"
+          if(hour>12)
+          {
+
+            p="PM"
+
+          }
+          if(hour<10){
+            hour="0"+hour
+
+          }
+          if(min<10){
+            min="0"+min
+
+          }
+          if(sec<10){
+            sec="0"+sec
+
+          }
+        var clock = hour + ":" + min + ":" +sec + " "+ p;
+        document.getElementById('MyClock').textContent =clock;
+setTimeout(clockRuner,1000)
+ 
+    }
+    clockRuner();
+</script>
+</body>
+</html>
